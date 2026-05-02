@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="max-w-4xl mx-auto">
+    <div class="glass-panel rounded-3xl p-10 space-y-8 fade-in">
+      <div>
+        <h1 class="hero-title text-3xl text-slate-100">Open your VoiceVault account</h1>
+        <p class="text-slate-400">Register once. Log in forever with only your voice.</p>
+      </div>
+
+      <div id="step-one" class="space-y-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="text-sm text-slate-300">Full name</label>
+            <input
+              id="full-name"
+              class="mt-2 w-full rounded-xl bg-slate-900/60 border border-white/5 px-4 py-3 text-slate-100"
+              placeholder="Aisha Rahman"
+            />
+          </div>
+          <div>
+            <label class="text-sm text-slate-300">Email</label>
+            <input
+              id="email"
+              type="email"
+              class="mt-2 w-full rounded-xl bg-slate-900/60 border border-white/5 px-4 py-3 text-slate-100"
+              placeholder="you@voicevault.bank"
+            />
+          </div>
+        </div>
+        <div>
+          <label class="text-sm text-slate-300">Key sentence</label>
+          <input
+            id="passphrase"
+            class="mt-2 w-full rounded-xl bg-slate-900/60 border border-white/5 px-4 py-3 text-slate-100"
+            placeholder="My voice is my vault"
+          />
+          <p class="mt-2 text-xs text-slate-500">Use the same sentence during every login.</p>
+        </div>
+        <button id="start-enrollment" class="btn-gold px-6 py-3 rounded-full">Continue</button>
+      </div>
+
+      <div id="step-two" class="hidden space-y-6">
+        <div>
+          <h2 class="text-lg text-slate-100">Record 5 voice samples</h2>
+          <p class="text-sm text-slate-400">Repeat this exact sentence for every sample.</p>
+          <p id="passphrase-preview" class="mt-2 text-sm text-amber-300"></p>
+        </div>
+        <div class="wave-frame p-4">
+          <canvas id="waveform" width="640" height="120"></canvas>
+        </div>
+        <div class="flex items-center gap-4">
+          <button id="record-sample" class="btn-ink px-6 py-3 rounded-full">Record sample</button>
+          <button id="submit-enrollment" class="btn-gold px-6 py-3 rounded-full hidden">Submit enrollment</button>
+          <span id="sample-progress" class="text-sm text-slate-400">0 / 5 samples captured</span>
+        </div>
+        <p id="record-status" class="text-sm text-slate-300">Waiting for your first sample.</p>
+      </div>
+    </div>
+  </section>
+  <script src="{{ url_for('static', filename='js/recorder.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+{% endblock %}

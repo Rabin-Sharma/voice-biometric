@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="max-w-6xl mx-auto space-y-10">
+    <div class="glass-panel rounded-3xl p-10 fade-in">
+      <div class="flex flex-wrap items-start justify-between gap-6">
+        <div>
+          <p class="text-sm text-slate-400">Welcome back</p>
+          <h1 id="user-name" class="hero-title text-3xl text-slate-100">Member</h1>
+        </div>
+        <div class="text-right">
+          <p class="text-xs text-slate-400">Balance</p>
+          <p class="text-3xl text-slate-100">$<span id="balance">0.00</span></p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 mt-8 text-sm text-slate-300">
+        <div class="rounded-2xl bg-slate-900/60 p-4">
+          <p class="text-xs text-slate-500">Account number</p>
+          <p id="account-number" class="text-slate-200">----</p>
+        </div>
+        <div class="rounded-2xl bg-slate-900/60 p-4">
+          <p class="text-xs text-slate-500">Account type</p>
+          <p id="account-type" class="text-slate-200">Checking</p>
+        </div>
+        <div class="rounded-2xl bg-slate-900/60 p-4">
+          <p class="text-xs text-slate-500">Member since</p>
+          <p id="member-since" class="text-slate-200">----</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass-panel rounded-3xl p-8 fade-in">
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg text-slate-100">Recent activity</h2>
+        <button class="btn-ink px-4 py-2 rounded-full" onclick="fetch('/api/logout', { method: 'POST' }).then(() => window.location.href = '/')">
+          Voice logout
+        </button>
+      </div>
+      <div id="transactions" class="mt-6"></div>
+    </div>
+  </section>
+  <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

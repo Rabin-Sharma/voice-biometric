@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+venv/
+.env
+
+# IDE / editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+
+# App runtime artifacts
+logs/
+audio_samples/**
+!audio_samples/.gitkeep
+voiceprints/**
+!voiceprints/.gitkeep
+pretrained_models/
+
+# Flask cache
+instance/
+

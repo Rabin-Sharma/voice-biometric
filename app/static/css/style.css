@@ -1,0 +1,104 @@
+:root {
+  --ink: #0b1016;
+  --night: #0a0f17;
+  --carbon: #101826;
+  --gold: #d6b36a;
+  --jade: #4dd6b9;
+  --mist: #d7dde6;
+}
+
+body {
+  font-family: "Sora", sans-serif;
+  background: radial-gradient(1200px 800px at 10% 10%, #0f1a2b 0%, #0a0f17 60%),
+    radial-gradient(900px 700px at 85% 20%, #152235 0%, #0a0f17 65%);
+  color: var(--mist);
+}
+
+.hero-title {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.02em;
+}
+
+.glass-panel {
+  background: rgba(16, 24, 38, 0.7);
+  border: 1px solid rgba(214, 179, 106, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(18px);
+}
+
+.gold-accent {
+  color: var(--gold);
+}
+
+.btn-gold {
+  background: linear-gradient(120deg, #f3d38d, #d6b36a 60%, #a5803c);
+  color: #1a1410;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(214, 179, 106, 0.35);
+}
+
+.btn-ink {
+  border: 1px solid rgba(214, 179, 106, 0.3);
+  color: var(--mist);
+  transition: all 0.2s ease;
+}
+
+.btn-ink:hover {
+  border-color: rgba(214, 179, 106, 0.7);
+  color: var(--gold);
+}
+
+.wave-frame {
+  border: 1px solid rgba(214, 179, 106, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(8, 12, 20, 0.6);
+}
+
+.record-ring {
+  border: 1px solid rgba(214, 179, 106, 0.3);
+  box-shadow: 0 0 0 0 rgba(214, 179, 106, 0.5);
+  animation: pulse 1.6s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(214, 179, 106, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(214, 179, 106, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(214, 179, 106, 0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.noise-layer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='120' height='120' filter='url(%23n)' opacity='0.08'/></svg>");
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+    <div class="space-y-6 fade-in">
+      <p class="uppercase tracking-[0.3em] text-xs text-slate-400">Trusted Voice Identity</p>
+      <h1 class="hero-title text-4xl lg:text-6xl text-slate-100">
+        Welcome to <span class="gold-accent">VoiceVault</span> Bank
+      </h1>
+      <p class="text-slate-300 text-lg leading-relaxed">
+        Zero passwords. Zero friction. Enroll with 5 voice samples of your own key sentence,
+        then log in by speaking that same exact sentence.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a class="btn-gold px-6 py-3 rounded-full" href="/register">Open Account</a>
+        <a class="btn-ink px-6 py-3 rounded-full" href="/login">Voice Login</a>
+      </div>
+      <div class="flex items-center gap-6 text-sm text-slate-400">
+        <div>
+          <p class="text-slate-200 text-lg font-semibold">256-dim</p>
+          <p>Speaker embeddings</p>
+        </div>
+        <div>
+          <p class="text-slate-200 text-lg font-semibold">5 samples</p>
+          <p>Enrollment training</p>
+        </div>
+        <div>
+          <p class="text-slate-200 text-lg font-semibold">Exact phrase</p>
+          <p>Strict passphrase match</p>
+        </div>
+      </div>
+    </div>
+    <div class="glass-panel rounded-3xl p-8 fade-in">
+      <div class="space-y-5">
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg">Live Voice Shield</h2>
+          <span class="text-xs text-slate-400">Bank-grade security</span>
+        </div>
+        <div class="wave-frame p-4">
+          <div class="h-36 rounded-xl bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent"></div>
+        </div>
+        <p class="text-sm text-slate-300">
+          Login now requires two checks: your voice identity must match an enrolled profile,
+          and your spoken key sentence must exactly match your registered phrase.
+        </p>
+      </div>
+    </div>
+  </section>
+{% endblock %}

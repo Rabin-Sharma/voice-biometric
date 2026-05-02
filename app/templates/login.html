@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="max-w-3xl mx-auto">
+    <div class="glass-panel rounded-3xl p-10 space-y-8 fade-in">
+      <div>
+        <h1 class="hero-title text-3xl text-slate-100">Voice-only login</h1>
+        <p class="text-slate-400">Say your exact key sentence to unlock your account.</p>
+      </div>
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-sm text-slate-400">Key sentence</p>
+          <p id="challenge-code" class="text-2xl text-slate-100">Say your key sentence</p>
+        </div>
+        <button id="login-mic" class="btn-gold px-6 py-3 rounded-full">Hold to speak</button>
+      </div>
+      <div class="wave-frame p-4">
+        <canvas id="login-waveform" width="640" height="120"></canvas>
+      </div>
+      <p id="login-status" class="text-sm text-slate-300">Ready when you are.</p>
+      <p id="login-debug" class="text-xs text-slate-400"></p>
+    </div>
+  </section>
+  <script src="{{ url_for('static', filename='js/recorder.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+{% endblock %}
